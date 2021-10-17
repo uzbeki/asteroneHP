@@ -245,7 +245,6 @@ section.banner .content a.btn:hover .button-text {
 main section.full-page {
 	min-height: 100vh;
 	padding: 4em 0;
-	margin: 0 var(--content-start);
 }
 
 main section.services {
@@ -256,26 +255,31 @@ main section.services {
 	align-items: center;
 	gap: 4em;
 }
-main section.services .intro {
+/* main section.services .intro { */
+.intro {
 	display: grid;
 	grid-template-columns: 40% 60%;
 	/* gap: 2em; */
 	align-items: center;
 }
-main section.services .intro .intro-title {
+/* main section.services .intro .intro-title { */
+.intro .intro-title {
 }
-main section.services .intro .intro-title h2 {
+/* main section.services .intro .intro-title h2 { */
+.intro .intro-title h2 {
 	font-size: 2em;
 	color: var(--asterone-yellow);
 	font-weight: 700;
 }
-main section.services .intro .intro-title p {
+/* main section.services .intro .intro-title p { */
+.intro .intro-title p {
 	color: var(--asterone-black);
 	opacity: 0.8;
 	position: relative;
 	width: fit-content;
 }
-main section.services .intro .intro-title p::after {
+/* main section.services .intro .intro-title p::after { */
+.intro .intro-title p::after {
 	content: "";
 	position: absolute;
 	right: -40px;
@@ -286,10 +290,12 @@ main section.services .intro .intro-title p::after {
 	opacity: 0.6;
 }
 
-main section.services .intro .intro-description {
+/* main section.services .intro .intro-description { */
+.intro .intro-description {
 	color: var(--asterone-black);
 }
-main section.services .intro .intro-description p {
+/* main section.services .intro .intro-description p { */
+.intro .intro-description p {
 	line-height: 1.7em;
 	font-size: 1.1em;
 }
@@ -412,6 +418,14 @@ main section.services .cards li.card:hover .card-footer::after {
 /* Main > Partners styling*/
 
 main section.partners {
+	/* background-color: #ffffff; */
+	background-image: url(../img/partners_bg.png);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	padding: 0 var(--content-start);
+	display: grid;
+	place-content: center;
+	gap: 4em;
 }
 main section.partners ul {
 	--slide-gap: 3em;
@@ -432,9 +446,15 @@ main section.partners ul li img {
 	object-fit: contain;
 }
 
+.slider-container {
+	overflow: hidden;
+	display: grid;
+	gap: 3em;
+}
 .slider {
 	position: relative;
 	overflow: hidden;
+	padding-bottom: inherit;
 }
 .slider::after,
 .slider::before {
@@ -459,14 +479,15 @@ main section.partners ul li img {
 	width: calc((var(--slide-width) + var(--slide-gap)) * 10);
 	animation: scroll 30s linear infinite;
 }
+.slider.reverse .slider-track:hover,
 .slider .slider-track:hover {
 	animation-play-state: paused;
 }
 
 .slide img {
-	transition: transform .4s ease-in-out;
+	transition: transform 0.4s ease-in-out;
 }
-.slide img:hover{
+.slide img:hover {
 	transform: scale(1.1);
 }
 
@@ -483,4 +504,110 @@ main section.partners ul li img {
 	100% {
 		transform: translateX(calc((-200px + 2em) * 5));
 	}
+}
+
+/* Main > Testimonials */
+
+section.testimonials.full-page {
+	padding: 4em var(--content-start);
+	background-color: #f5f5f5;
+	display: grid;
+	align-items: center;
+	gap: 4em;
+}
+
+section.testimonials ul.testimonial-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 2em;
+}
+section.testimonials ul.testimonial-cards .testimonial {
+	width: 400px;
+}
+section.testimonials ul.testimonial-cards .testimonial .content {
+	box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 15%);
+	padding: 3em;
+	position: relative;
+	background-color: white;
+	margin-bottom: 40px;
+	border-radius: 20px;
+}
+section.testimonials ul.testimonial-cards .testimonial .content::after {
+	/* small triange for a card using its after element*/
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+
+	border-top: 20px solid white;
+	bottom: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+section.testimonials ul.testimonial-cards .testimonial .content .icon {
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	padding: 4px;
+	border: 1px dashed var(--asterone-yellow);
+	border-radius: 100%;
+	margin-bottom: 15px;
+	position: relative;
+}
+section.testimonials ul.testimonial-cards .testimonial .content .icon i {
+	color: white;
+	width: 50px;
+	height: 50px;
+	line-height: 41px;
+	display: grid;
+	place-content: center;
+	border-radius: 100%;
+	background-color: var(--asterone-yellow);
+}
+section.testimonials ul.testimonial-cards .testimonial .content .icon::before,
+.testimonial .content .icon::after {
+	content: "";
+	position: absolute;
+	background-color: var(--asterone-yellow);
+	height: 3px;
+	width: 60px;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0.5;
+}
+section.testimonials ul.testimonial-cards .testimonial .content .icon::before {
+	margin-left: -100px;
+	left: 0;
+}
+.testimonial .content .icon::after {
+	margin-left: 100px;
+	left: 0;
+}
+section.testimonials ul.testimonial-cards .testimonial .content p {
+	text-align: center;
+	font-size: 1.2em;
+	color: var(--asterone-black);
+	opacity: 0.8;
+}
+
+section.testimonials ul.testimonial-cards .testimonial .author {
+}
+section.testimonials ul.testimonial-cards .testimonial .author .author-img {
+	display: grid;
+	place-content: center;
+}
+section.testimonials ul.testimonial-cards .testimonial .author .author-img img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+section.testimonials ul.testimonial-cards .testimonial .author-title {
+	text-align: center;
+}
+section.testimonials ul.testimonial-cards .testimonial .author-occupation {
+	text-align: center;
 }
