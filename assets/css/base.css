@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&display=swap");
+
+/* @font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Material Icons"), local("MaterialIcons-Regular"), 
+         url(../icons/MaterialIcons-Regular.woff2) format("woff2"), 
+         url(../icons/MaterialIcons-Regular.ttf) format("truetype");
+    
+    src: local("Material Icons Outlined"), local("MaterialIcons-Outlined"), 
+         url(../icons/MaterialIconsOutlined-Regular.woff2) format("woff2"), 
+    
+} */
+
+/* .material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+
+
+    -moz-osx-font-smoothing: grayscale;
+
+
+    font-feature-settings: "liga";
+} */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: "Noto Serif JP", serif;
+    scroll-behavior: smooth;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+li {
+	list-style: none;
+}
