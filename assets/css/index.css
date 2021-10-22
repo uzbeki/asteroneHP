@@ -115,6 +115,7 @@ header .bottom nav ul li:hover {
 
 main {
 	max-width: 100vw;
+	overflow: hidden;
 }
 main section.banner {
 	background-image: url(../img/banner.jpg);
@@ -246,15 +247,15 @@ section.banner .content a.btn:hover .button-text {
 main section.full-page {
 	min-height: 100vh;
 	padding: 4em 0;
-}
-
-main section.services {
-	margin: 0 var(--content-start);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 4em;
+}
+
+main section.services {
+	padding: 4em var(--content-start);
 }
 /* main section.services .intro { */
 .intro {
@@ -462,7 +463,7 @@ main section.partners ul li img {
 	content: "";
 	background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
 	height: 100%;
-	width: 15%;
+	width: 10%;
 	z-index: 2;
 	position: absolute;
 	top: 0;
@@ -512,15 +513,15 @@ main section.partners ul li img {
 section.testimonials.full-page {
 	padding: 4em var(--content-start);
 	background-color: #f5f5f5;
-	display: grid;
-	align-items: center;
-	gap: 4em;
+	/* display: grid; */
+	/* align-items: center; */
+	/* gap: 4em; */
 }
 
 section.testimonials ul.testimonial-cards {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	gap: 2em;
+	/* display: grid; */
+	/* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+	/* gap: 2em; */
 }
 section.testimonials ul.testimonial-cards .testimonial {
 	width: 400px;
@@ -613,13 +614,49 @@ section.testimonials ul.testimonial-cards .testimonial .author-occupation {
 	text-align: center;
 }
 
-/* Footer */
+/* testimonial Swiper styles */
+section.testimonials .swiper{
+	padding: 1em;
+	width: 100%;
+}
+section.testimonials .swiper::after,
+section.testimonials .swiper::before{
+	content: "";
+    background: linear-gradient(to right, rgb(245, 245, 245) 0%, rgba(245, 245, 245, 0) 100%);
+    height: 100%;
+    width: 10%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+}
+section.testimonials .swiper::after{
+	left: 0;
+}
+section.testimonials .swiper::before{
+	right: 0;
+	transform: rotateZ(180deg);
+}
 
+section.testimonials .swiper .swiper-wrapper{
+	width: 30%;
+}
+section.testimonials .swiper .swiper-slide{
+	cursor: grab;
+	user-select: none;
+}
+
+
+
+
+
+
+
+/* Footer */
 footer {
    position: relative;
    width: 100%;
-   height: auto;
-   padding: 50px 100px;
+   height: fit-content;
+   padding: 50px 100px 20px 100px;
    background-color: #252628;
    display: flex;
    justify-content: space-between;
@@ -634,6 +671,7 @@ footer .container {
 }
 footer .container .sec {
 	margin-right: 30px;
+	width: fit-content;
 }
 footer .container .sec.about-us {
 	width: 22%;
@@ -643,6 +681,7 @@ footer .container h2 {
 	color: var(--asterone-yellow);
 	font-weight: 500;
 	margin-bottom: 15px;
+	width: fit-content;
 }
 
 footer .container h2::before {
@@ -650,9 +689,9 @@ footer .container h2::before {
 	position: absolute;
 	bottom: -5px;
 	left: 0;
-	width: 50px;
-	height: 2px;
-	background: var(--asterone-yellow);
+	width: 100%;
+	border-bottom: 2px dashed var(--asterone-yellow);
+	/* background: var(--asterone-yellow); */
 }
 footer p {
 	color: #999;
@@ -726,6 +765,7 @@ footer p {
 	color: #fff;
 }
 .copyright-text {
+	margin-top: 1em;
 	width: 100%;
 	background: #252628;
 	padding: 8px 100px;
@@ -741,9 +781,9 @@ footer p {
 	footer {
 		padding: 40px;
 	}
-	footer .container {
+	/* footer .container {
 		flex-direction: column;
-	}
+	} */
 	footer .container .sec {
 		margin-right: 0;
 		margin-bottom: 40px;
